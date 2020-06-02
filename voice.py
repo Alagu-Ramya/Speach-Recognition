@@ -7,6 +7,10 @@ with sr.Microphone() as source:
 
     try:
         text=r.recognize_google(audio)
-        print("You said: {}".format(text))
+        if text.lower() in ["hello","hey","hola"]:
+            print("Hello user how are you?")
+        else:
+            print("{}".format(text))
+        
     except:
         print("sorry could not recognize your voice")
